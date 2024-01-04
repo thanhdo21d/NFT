@@ -10,14 +10,15 @@ import background1 from "../assets/flesh.png";
 import { motion } from "framer-motion";
 import background2 from "../assets/light-purple.png";
 import background4 from "../assets/light-yellow.png";
+import bax from "../assets/LOGODENGSOLnobg.png";
 import { toast } from "react-toastify";
 import { IoCloseCircleOutline } from "react-icons/io5";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import fadeIn from "./vairant";
 const Header = () => {
-  const [userIndex, setUserIndex] = useState(0);
+  const [userIndex, setUserIndex] = useState(2);
   const [checkMenu, setCheckMenu] = useState(false);
-  const [backgroundIndex, setBackgroundIndex] = useState(0);
+  const [backgroundIndex, setBackgroundIndex] = useState(2);
   const userImages = [bgIcons3, bgIcons4, bgIcons5, bgIcons6];
   const backgroundImages = [bgIcons2, background1, background2, background4];
   const handleImageChange = () => {
@@ -26,6 +27,18 @@ const Header = () => {
       (prevIndex) => (prevIndex + 1) % backgroundImages.length
     );
   };
+  const preloadImages = () => {
+    const images = [...userImages, ...backgroundImages];
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  };
+
+  useEffect(() => {
+    if (!userImages.length || !backgroundImages.length) return;
+    preloadImages();
+  }, [userImages, backgroundImages]);
 
   return (
     <div
@@ -103,7 +116,11 @@ const Header = () => {
       >
         <div className="flex justify-between items-center">
           <div>
-            <img className="w-[100px]" src={bgIcons} alt="" />
+            <img
+              className="w-[100px]  transition rounded-md  delay-150  hover:-translate-y-1 hover:scale-110  duration-300 ease-in-out"
+              src={bax}
+              alt="Selected"
+            />
             {/* <p className="font-share-tech-mono font-bold text-4xl">dengsol</p>
             img */}
           </div>
@@ -153,7 +170,7 @@ const Header = () => {
             viewport={{ once: false, amount: 0.3 }}
             className="mt-40 w-[80%]"
             src={bgIcons}
-            alt=""
+            alt="Selected"
           />
         </div>
         {/*  */}
@@ -188,7 +205,7 @@ const Header = () => {
             viewport={{ once: false, amount: 0.3 }}
             className="w-[550px] absolute bottom-0 cursor-pointer"
             src={userImages[userIndex]}
-            alt=""
+            alt="Selected"
           />
         </div>
         {/*  */}

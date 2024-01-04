@@ -4,3 +4,11 @@
 .font-share-tech-mono {
   font-family: "Share Tech Mono", monospace;
 }
+.image-container {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.image-container.visible {
+  opacity: 1;
+}
