@@ -7,14 +7,16 @@ import bgIcons4 from "../assets/2.png";
 import bgIcons5 from "../assets/3.png";
 import bgIcons6 from "../assets/4.png";
 import background1 from "../assets/flesh.png";
+import { motion } from "framer-motion";
 import background2 from "../assets/light-purple.png";
 import background4 from "../assets/light-yellow.png";
 import { toast } from "react-toastify";
-
+import { IoCloseCircleOutline } from "react-icons/io5";
 import { useState } from "react";
-
+import fadeIn from "./vairant";
 const Header = () => {
   const [userIndex, setUserIndex] = useState(0);
+  const [checkMenu, setCheckMenu] = useState(false);
   const [backgroundIndex, setBackgroundIndex] = useState(0);
   const userImages = [bgIcons3, bgIcons4, bgIcons5, bgIcons6];
   const backgroundImages = [bgIcons2, background1, background2, background4];
@@ -24,36 +26,135 @@ const Header = () => {
       (prevIndex) => (prevIndex + 1) % backgroundImages.length
     );
   };
+
   return (
     <div
       style={{ backgroundImage: `url(${backgroundImages[backgroundIndex]})` }}
-      className="w-full h-full"
+      className="w-full h-full relative"
     >
+      {checkMenu && (
+        <motion.div
+          variants={fadeIn("left", 0.25)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.3 }}
+          className="absolute right-0 top-0 bg-black text-white h-full z-10 w-[80%] bg-opacity-75 rounded-sm shadow-light-600"
+        >
+          <div className="absolute hover:scale-110 cursor-pointer">
+            <IoCloseCircleOutline
+              size={30}
+              onClick={() => setCheckMenu(!checkMenu)}
+            />
+          </div>
+          <div className="mt-20 mx-10">
+            <p
+              onClick={() => toast.error("comming soon !")}
+              className="font-share-tech-mono uppercase transition  rounded-md  delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 ease-in-out cursor-pointer text-xl mt-5 pl-5"
+            >
+              marketplace
+            </p>
+            <p
+              onClick={() => toast.error("comming soon !")}
+              className="uppercase font-share-tech-mono delay-150 rounded-md bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 ease-in-out  ease-in-out cursor-pointer text-xl mt-5 pl-5"
+            >
+              dengmap
+            </p>
+            <p
+              onClick={() => toast.error("comming soon !")}
+              className="uppercase font-share-tech-mono transition rounded-md  delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 ease-in-out cursor-pointer text-xl mt-5 pl-5"
+            >
+              staking
+            </p>
+          </div>
+          <div className="flex md:hidden justify-end items-center gap-10 mr-10 mt-10">
+            <a
+              href="https://twitter.com/deng_sol"
+              className="cursor-pointer ease-in-out duration-300 hover:scale-110"
+            >
+              <FaTwitter size={35} />
+            </a>
+            <p
+              onClick={() => toast.error("comming soon !")}
+              className="cursor-pointer ease-in-out duration-300 hover:scale-110"
+            >
+              <BsDiscord size={35} />
+            </p>
+            <p
+              onClick={() => toast.error("comming soon !")}
+              className="w-[35px] cursor-pointer ease-in-out duration-300 hover:scale-110"
+            >
+              <svg
+                viewBox="0 0 25 25"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill="black"
+                  d="M17.7,8.85l1.46,1.71c0.17,0.19,0.31,0.35,0.38,0.44c0.44,0.43,0.68,1.02,0.68,1.62 c-0.04,0.71-0.51,1.2-0.95,1.73l-1.03,1.19l-0.53,0.62c-0.02,0.02-0.03,0.05-0.04,0.08c-0.01,0.03,0,0.06,0.01,0.08 c0.01,0.03,0.03,0.05,0.06,0.06c0.02,0.01,0.05,0.02,0.08,0.02h5.34c0.81,0,1.84,0.68,1.78,1.71c0,0.47-0.2,0.92-0.53,1.25 c-0.34,0.33-0.8,0.52-1.28,0.52h-8.36c-0.55,0-2.03,0.06-2.44-1.19c-0.09-0.26-0.1-0.54-0.04-0.81c0.12-0.4,0.31-0.77,0.56-1.1 c0.42-0.62,0.87-1.23,1.32-1.83c0.58-0.79,1.17-1.54,1.76-2.34c0.02-0.03,0.03-0.06,0.03-0.09c0-0.04-0.01-0.06-0.03-0.09 l-2.12-2.47c-0.01-0.01-0.03-0.03-0.05-0.04c-0.02-0.01-0.04-0.01-0.07-0.01c-0.02,0-0.04,0.01-0.07,0.01 c-0.02,0.01-0.04,0.02-0.05,0.04c-0.57,0.75-3.06,4.08-3.59,4.75c-0.53,0.67-1.84,0.71-2.57,0L4.1,11.44 c-0.02-0.02-0.05-0.04-0.08-0.04c-0.03-0.01-0.06,0-0.09,0.01c-0.03,0.01-0.05,0.03-0.07,0.06c-0.01,0.02-0.03,0.05-0.02,0.08v6.27 c0.01,0.45-0.12,0.88-0.39,1.25c-0.26,0.37-0.63,0.64-1.05,0.79c-0.28,0.09-0.57,0.12-0.85,0.08C1.27,19.88,1,19.78,0.76,19.62 c-0.24-0.17-0.43-0.38-0.56-0.63C0.07,18.73,0,18.45,0,18.17V6.89c0.02-0.4,0.17-0.79,0.43-1.12c0.26-0.32,0.61-0.55,1.01-0.66 c0.34-0.09,0.71-0.09,1.05,0C2.83,5.21,3.14,5.38,3.4,5.64l5.11,5c0.01,0.01,0.04,0.03,0.05,0.04c0.02,0.01,0.04,0.01,0.07,0.01 c0.02,0,0.04-0.01,0.06-0.02c0.02-0.01,0.04-0.02,0.05-0.04l3.63-4.91c0.17-0.2,0.38-0.36,0.62-0.47c0.24-0.11,0.5-0.17,0.76-0.17 h9.44c0.26,0,0.52,0.06,0.75,0.16c0.23,0.11,0.44,0.26,0.62,0.45c0.17,0.19,0.3,0.41,0.37,0.66c0.07,0.25,0.09,0.5,0.06,0.75 c-0.07,0.43-0.29,0.83-0.63,1.11c-0.34,0.28-0.78,0.44-1.23,0.43h-5.29c-0.03,0-0.05,0.01-0.07,0.02c-0.02,0.01-0.04,0.04-0.05,0.06 C17.7,8.72,17.7,8.75,17.7,8.77C17.67,8.8,17.68,8.83,17.7,8.85z"
+                ></path>
+              </svg>
+            </p>
+          </div>
+        </motion.div>
+      )}
       <div
         onClick={handleImageChange}
         className="mx-10 pt-10 relative h-screen"
       >
         <div className="flex justify-between items-center">
           <div>
-            {/* <img src="" alt="" /> */}
-            <p className="font-share-tech-mono font-bold text-4xl">dengsol</p>
+            <img className="w-[100px]" src={bgIcons} alt="" />
+            {/* <p className="font-share-tech-mono font-bold text-4xl">dengsol</p>
+            img */}
           </div>
           {/*  */}
-          <div className="flex justify-between items-center gap-12">
-            <p onClick={()=>toast.error("comming soon !")} className="font-share-tech-mono uppercase hover:scale-105 ease-in-out cursor-pointer text-xl">
+          <div className="hidden md:flex justify-between items-center gap-12">
+            <p
+              onClick={() => toast.error("comming soon !")}
+              className="font-share-tech-mono uppercase hover:scale-105 ease-in-out cursor-pointer text-xl"
+            >
               marketplace
             </p>
-            <p onClick={()=>toast.error("comming soon !")} className="uppercase font-share-tech-mono hover:scale-105 ease-in-out cursor-pointer text-xl">
+            <p
+              onClick={() => toast.error("comming soon !")}
+              className="uppercase font-share-tech-mono hover:scale-105 ease-in-out cursor-pointer text-xl"
+            >
               dengmap
             </p>
-            <p onClick={()=>toast.error("comming soon !")} className="uppercase font-share-tech-mono hover:scale-105 ease-in-out cursor-pointer text-xl">
+            <p
+              onClick={() => toast.error("comming soon !")}
+              className="uppercase font-share-tech-mono hover:scale-105 ease-in-out cursor-pointer text-xl"
+            >
               staking
             </p>
+          </div>
+          <div className="block md:hidden">
+            <button className="" onClick={() => setCheckMenu(!checkMenu)}>
+              <svg
+                aria-hidden="true"
+                height={16}
+                viewBox="0 0 16 16"
+                version="1.1"
+                width={16}
+                data-view-component="true"
+                className="octicon octicon-three-bars Button-visual "
+              >
+                <path d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75Zm0 5A.75.75 0 0 1 1.75 7h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 7.75ZM1.75 12h12.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Z" />
+              </svg>
+            </button>
           </div>
         </div>
         {/*  */}
         <div className="flex justify-center">
-          <img className="mt-40 w-[80%]" src={bgIcons} alt="" />
+          <motion.img
+            variants={fadeIn("down", 0.75)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.3 }}
+            className="mt-40 w-[80%]"
+            src={bgIcons}
+            alt=""
+          />
         </div>
         {/*  */}
         {/*  */}
@@ -80,7 +181,11 @@ const Header = () => {
           </svg>
         </div>
         <div className="flex justify-center ">
-          <img
+          <motion.img
+            variants={fadeIn("down", 0.25)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.3 }}
             className="w-[550px] absolute bottom-0 cursor-pointer"
             src={userImages[userIndex]}
             alt=""
@@ -88,14 +193,23 @@ const Header = () => {
         </div>
         {/*  */}
         <div className=" absolute bottom-12 right-0">
-          <div className="flex justify-end items-center gap-10">
-            <p className="cursor-pointer ease-in-out duration-300 hover:scale-110">
+          <div className="hidden md:flex justify-end items-center gap-10">
+            <a
+              href="https://twitter.com/deng_sol"
+              className="cursor-pointer ease-in-out duration-300 hover:scale-110"
+            >
               <FaTwitter size={35} />
-            </p>
-            <p className="cursor-pointer ease-in-out duration-300 hover:scale-110">
+            </a>
+            <p
+              onClick={() => toast.error("comming soon !")}
+              className="cursor-pointer ease-in-out duration-300 hover:scale-110"
+            >
               <BsDiscord size={35} />
             </p>
-            <p className="w-[35px] cursor-pointer ease-in-out duration-300 hover:scale-110">
+            <p
+              onClick={() => toast.error("comming soon !")}
+              className="w-[35px] cursor-pointer ease-in-out duration-300 hover:scale-110"
+            >
               <svg
                 viewBox="0 0 25 25"
                 fill="none"
