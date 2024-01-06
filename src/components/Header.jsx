@@ -217,12 +217,12 @@ const Header = () => {
             >
               <FaTwitter size={35} />
             </a>
-            <p
-              onClick={() => toast.error("comming soon !")}
+            <a
+              herf="https://discord.gg/SUUK6rjexD"
               className="cursor-pointer ease-in-out duration-300 hover:scale-110"
             >
               <BsDiscord size={35} />
-            </p>
+            </a>
             <p
               onClick={() => toast.error("comming soon !")}
               className="w-[35px] cursor-pointer ease-in-out duration-300 hover:scale-110"
