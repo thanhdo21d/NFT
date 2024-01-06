@@ -220,7 +220,7 @@ const Header = () => {
             </a>
             <a
               target="_blank"
-              herf="https://discord.gg/SUUK6rjexD"
+              href="https://discord.gg/SUUK6rjexD"
               className="cursor-pointer ease-in-out duration-300 hover:scale-110"
             >
               <BsDiscord size={35} />
