@@ -212,12 +212,14 @@ const Header = () => {
         <div className=" absolute bottom-12 right-0">
           <div className="hidden md:flex justify-end items-center gap-10">
             <a
+              target="_blank"
               href="https://twitter.com/deng_sol"
               className="cursor-pointer ease-in-out duration-300 hover:scale-110"
             >
               <FaTwitter size={35} />
             </a>
             <a
+              target="_blank"
               herf="https://discord.gg/SUUK6rjexD"
               className="cursor-pointer ease-in-out duration-300 hover:scale-110"
             >
