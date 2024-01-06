@@ -81,17 +81,19 @@ const Header = () => {
           </div>
           <div className="flex md:hidden justify-end items-center gap-10 mr-10 mt-10">
             <a
+               target="_blank"
               href="https://twitter.com/deng_sol"
               className="cursor-pointer ease-in-out duration-300 hover:scale-110"
             >
               <FaTwitter size={35} />
             </a>
-            <p
-              onClick={() => toast.error("comming soon !")}
+           <a
+              target="_blank"
+              href="https://discord.gg/SUUK6rjexD"
               className="cursor-pointer ease-in-out duration-300 hover:scale-110"
             >
               <BsDiscord size={35} />
-            </p>
+            </a>
             <p
               onClick={() => toast.error("comming soon !")}
               className="w-[35px] cursor-pointer ease-in-out duration-300 hover:scale-110"
