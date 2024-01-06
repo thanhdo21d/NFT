@@ -16,9 +16,9 @@ import { IoCloseCircleOutline } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import fadeIn from "./vairant";
 const Header = () => {
-  const [userIndex, setUserIndex] = useState(2);
+  const [userIndex, setUserIndex] = useState(0);
   const [checkMenu, setCheckMenu] = useState(false);
-  const [backgroundIndex, setBackgroundIndex] = useState(2);
+  const [backgroundIndex, setBackgroundIndex] = useState(0);
   const userImages = [bgIcons3, bgIcons4, bgIcons5, bgIcons6];
   const backgroundImages = [bgIcons2, background1, background2, background4];
   const handleImageChange = () => {
