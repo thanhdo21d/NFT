@@ -61,19 +61,19 @@ const Header = () => {
           </div>
           <div className="mt-20 mx-10">
             <p
-              onClick={() => toast.error("comming soon !")}
+              onClick={() => toast.error("coming soon !")}
               className="font-share-tech-mono uppercase transition  rounded-md  delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 ease-in-out cursor-pointer text-xl mt-5 pl-5"
             >
               marketplace
             </p>
             <p
-              onClick={() => toast.error("comming soon !")}
+              onClick={() => toast.error("coming soon !")}
               className="uppercase font-share-tech-mono delay-150 rounded-md bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 ease-in-out  ease-in-out cursor-pointer text-xl mt-5 pl-5"
             >
               dengmap
             </p>
             <p
-              onClick={() => toast.error("comming soon !")}
+              onClick={() => toast.error("coming soon !")}
               className="uppercase font-share-tech-mono transition rounded-md  delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 ease-in-out cursor-pointer text-xl mt-5 pl-5"
             >
               staking
@@ -95,7 +95,7 @@ const Header = () => {
               <BsDiscord size={35} />
             </a>
             <p
-              onClick={() => toast.error("comming soon !")}
+              onClick={() => toast.error("coming soon !")}
               className="w-[35px] cursor-pointer ease-in-out duration-300 hover:scale-110"
             >
               <svg
@@ -129,19 +129,19 @@ const Header = () => {
           {/*  */}
           <div className="hidden md:flex justify-between items-center gap-12">
             <p
-              onClick={() => toast.error("comming soon !")}
+              onClick={() => toast.error("coming soon !")}
               className="font-share-tech-mono uppercase hover:scale-105 ease-in-out cursor-pointer text-xl"
             >
               marketplace
             </p>
             <p
-              onClick={() => toast.error("comming soon !")}
+              onClick={() => toast.error("coming soon !")}
               className="uppercase font-share-tech-mono hover:scale-105 ease-in-out cursor-pointer text-xl"
             >
               dengmap
             </p>
             <p
-              onClick={() => toast.error("comming soon !")}
+              onClick={() => toast.error("coming soon !")}
               className="uppercase font-share-tech-mono hover:scale-105 ease-in-out cursor-pointer text-xl"
             >
               staking
@@ -228,7 +228,7 @@ const Header = () => {
               <BsDiscord size={35} />
             </a>
             <p
-              onClick={() => toast.error("comming soon !")}
+              onClick={() => toast.error("coming soon !")}
               className="w-[35px] cursor-pointer ease-in-out duration-300 hover:scale-110"
             >
               <svg
